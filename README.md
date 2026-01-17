@@ -1,8 +1,6 @@
-| <img src="./assets/media/image163.png" /> |
-|----|
+![](assets/media/image163.png)
 
-D3.7  
-DOME Reference Architecture and Specifications V3
+D3.7 DOME Reference Architecture and Specifications V3
 
 **Project full title**: A Distributed Open Marketplace for Europe Cloud and Edge Services
 
@@ -37,7 +35,7 @@ The European Commission thereby stepped up its efforts to support cloud uptake i
 
 DOME materialises the envisioned online marketplace, providing the means for accessing trusted services, notably cloud and edge services, building blocks deployed under the Common Services Platform and more generally any software and data processing services developed under EU programmes such as the Digital Europe Programme, Horizon 2020 or Horizon Europe.
 
-Relying on Gaia-X concepts and open standards, DOME provides the finishing touch to the technical building that the Digital Europe Program is creating for boosting the development and adoption of trusted Cloud and Edge services in Europe. It provides the single point for enabling customers and service providers to meet each other in a trustful manner. DOME takes the form of a federated collection of marketplaces connected to a shared digital catalogue of cloud and edge services.
+Relying on open standards, DOME provides the finishing touch to the technical building that the Digital Europe Program is creating for boosting the development and adoption of trusted Cloud and Edge services in Europe. It provides the single point for enabling customers and service providers to meet each other in a trustful manner. DOME takes the form of a federated collection of marketplaces connected to a shared digital catalogue of cloud and edge services.
 
 Each of the federated marketplaces are independent or connected to the offering of a given cloud provider which, in turn, can be classified as cloud IaaS providers or cloud platform providers (each of which provides a platform targeted to solve the integration of vertical data/application services from a given vertical domain, like smart cities or smart farming, or the integration of certain type of data/application services, e.g., AI services).
 
