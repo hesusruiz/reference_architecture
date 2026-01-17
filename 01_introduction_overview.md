@@ -1,56 +1,6 @@
-# 1 Introduction
-
-## 1.1 Executive Summary
-
-Cloud computing is identified as a central piece of Europe’s digital future, giving European businesses and public organisations the data processing technology required to support their digital transformation. The European Commission thereby stepped up its efforts to support cloud uptake in Europe as part of its strategy, notably with the pledge to facilitate "the set-up of a cloud services marketplace for EU users from the private and public sector". DOME will materialise the envisioned online marketplace, providing the means for accessing trusted services, notably cloud and edge services, building blocks deployed under the Common Services Platform and more generally any software and data processing services developed under EU programmes such as the Digital Europe Programme, Horizon 2020 or Horizon Europe Relying on Gaia-X concepts and open standards, DOME will provide the finishing touch to the technical building that the Digital Europe Program is creating for boosting the development and adoption of trusted Cloud and Edge services in Europe. It will provide the single point for enabling customers and service providers to meet each other in a trustful manner. DOME will take the form of a federated collection of marketplaces connected to a shared digital catalogue of cloud and edge services. Each of the federated marketplaces will be independent or connected to the offering of a given cloud providers which, in turn, can be classified as cloud IaaS providers or cloud platform providers (each of which provide a platform targeted to solve the integration of vertical data/application services from a given vertical domain, like smart cities or smart farming, or the integration of certain type of data/application services, e.g., AI services). DOME will rely on the adoption of common open standards for the description of cloud and edge services and service offerings as well as their access through a shared catalogue.
-
-This document describes the Reference Architecture and Detailed Technical Specifications of the DOME components.
-
-## 1.2 Intended audience
-
-DOME partners involved in technical activities and DOME reviewers.
-
-##  
-
-## 1.3 Structure of the document
-
-This document is divided into 5 sections, plus 3 appendixes:
-
-**Section 1**: Introduction - provides a summary of this document
-
-**Section 2**: DOME General Overview - describes the overall structure of the project, including different roles of users, the overall technical approach and the user journeys.
-
-**Section 3**: DOME Trust and IAM Framework - provides a description of the decentralised Trust and Identity and Access Management (IAM) framework which are implemented in DOME.
-
-**Section 4**: DOME Marketplace Persistence Layer - provides a description of the DOME Persistence Layer, focusing on the specific goals and priorities associated with its implementation, including the Shared Catalog and the Transactions Layer.
-
-**Section 5**: DOME marketplace features - provides a description of the DOME marketplace, including the design of the processes involved in a federated procurement scenario and high-level architecture of the various subsystems delivering such features.
-
-**Section 6**: Appendix I: example of onboarding of organisations in DOME - provides examples with detailed technical descriptions of some user journeys in DOME..
-
-**Section 7**: Appendix II: JAdES signatures of Verifiable Credentials - provides a description of the approach to digital signatures of Verifiable Credentials in DOME, to achieve high legal certainty and alignment with the EU eIDAS (and upcoming eIDAS2) regulatory framework..
-
-**Section 8**: Appendix III: remote Digital Signature Service (rDSS) - provides a description of the approach to remote/cloud digital signatures, enabling the use of advanced and qualified signatures for Verifiable Credentials and other types of documents, increasing legal certainty and making Verifiable Credentials equivalent to handwritten signed documents.
-
-## 1.4 Related documents and resources
-
-Following is a list of valuable links to relevant documents and resources:
-
-- [DOME Technical Overview presentation](https://docs.google.com/presentation/d/17vEx9bIUeVIUTqsiFyVqySC81gHoFs1K/edit?usp=sharing&ouid=107618755245949253912&rtpof=true&sd=true)
-
-- [<u>TM Forum APIs (summary by FIWARE Foundation)</u>](https://docs.google.com/document/d/1ePSb3OammKcsnMgHNgp5ZdH7pif4oT5gUtsBNUR1ikc/edit?usp=sharing)
-
-- [<u>EU Digital Identity Wallet Architecture and Reference Framework</u>](https://digital-strategy.ec.europa.eu/en/library/european-digital-identity-wallet-architecture-and-reference-framework)
-
-- [<u>DSBA Technology Convergence: Discussion Document</u>](https://data-spaces-business-alliance.eu/dsba-releases-technical-convergence-discussion-document/)
-
-- [<u>Digital Signature Service - DSS</u>](https://ec.europa.eu/digital-building-blocks/wikis/display/DIGITAL/Digital+Signature+Service+-++DSS)
-
-- [<u>DID ETSI Legal person Semantic Identifier Method Specification (did:elsi)</u>](https://alastria.github.io/did-method-elsi/)
-
 # 2 DOME General Overview
 
-DOME will take the form of an **ecosystem of federated instances of marketplaces sharing a curated digital catalogue of trusted cloud, edge and AI services**.
+DOME is an **ecosystem of federated instances of marketplaces sharing a curated digital catalogue of trusted cloud, edge and AI services**.
 
 The concept is described in the following figure.
 
