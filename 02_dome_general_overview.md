@@ -11,6 +11,7 @@ The concept is described in the following figure.
 
 
 ![Figure 2.1 - High-level overview of DOME architecture](assets/media/image150.png)
+Figure 2.1 - High-level overview of DOME architecture
 
 Each of the federated marketplaces in the DOME ecosystem will be operated by an independent entity, and all the instances share a common catalogue by using a decentralised replication mechanism to securely synchronise the marketplace data managed in each instance.
 
