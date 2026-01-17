@@ -5,8 +5,8 @@ DOME is an **ecosystem of federated instances of marketplaces sharing a curated 
 The concept is described in the following figure.
 
 <figure>
-    <img src="./assets/media/image150.png" />
     <figcaption>Figure 2.1 - High-level overview of DOME architecture</figcaption>
+    <img src="./assets/media/image150.png" />
 </figure>
 
 
