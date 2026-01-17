@@ -26,23 +26,6 @@ DOME Reference Architecture and Specifications V3
 | v1.0.0 | 30/12/2025 | Final Review | Nicolae Goga, Mihai Butolo, Robert Florescu / BEIA |
 | v1.0.1 | 17/01/2026 | Markdown version | Jesus Ruiz |
 
-**Table of Contents**
-
-[1 Introduction](01_introduction_overview.md)
-
-[2 DOME General Overview](01_introduction_overview.md)
-
-[3 DOME Trust and IAM Framework](03_trust_and_iam_framework.md)
-
-[4 DOME Marketplace Persistence Layer](04_persistence_layer.md)
-
-[5 DOME marketplace features](05_features.md)
-
-[6 Appendix I: example of onboarding of organisations in DOME](06_appendix_i.md)
-
-[7 Appendix II: JAdES signatures of Verifiable Credentials](07_appendix_ii.md)
-
-[8 Appendix III: remote Digital Signature Service (rDSS)](08_appendix_iii.md)
 
 # 1 Introduction
 
@@ -70,21 +53,21 @@ DOME partners involved in technical activities and any party willing to connect 
 
 This document is divided into 5 sections, plus 3 appendixes:
 
-**Section 1**: Introduction - provides a summary of this document
+[Section 1: Introduction](01_introduction_overview.md) - provides a summary of this document
 
-**Section 2**: DOME General Overview - describes the overall structure of the project, including different roles of users, the overall technical approach and the user journeys.
+[Section 2: DOME General Overview](02_dome_general_overview.md) - describes the overall structure of the project, including different roles of users, the overall technical approach and the user journeys.
 
-**Section 3**: DOME Trust and IAM Framework - provides a description of the decentralised Trust and Identity and Access Management (IAM) framework which are implemented in DOME.
+[Section 3: DOME Trust and IAM Framework](03_trust_and_iam_framework.md) - provides a description of the decentralised Trust and Identity and Access Management (IAM) framework which are implemented in DOME.
 
-**Section 4**: DOME Marketplace Persistence Layer - provides a description of the DOME Persistence Layer, focusing on the specific goals and priorities associated with its implementation, including the Shared Catalog and the Transactions Layer.
+[Section 4: DOME Marketplace Persistence Layer](04_persistence_layer.md) - provides a description of the DOME Persistence Layer, focusing on the specific goals and priorities associated with its implementation, including the Shared Catalog and the Transactions Layer.
 
-**Section 5**: DOME marketplace features - provides a description of the DOME marketplace, including the design of the processes involved in a federated procurement scenario and high-level architecture of the various subsystems delivering such features.
+[Section 5: DOME marketplace features](05_features.md) - provides a description of the DOME marketplace, including the design of the processes involved in a federated procurement scenario and high-level architecture of the various subsystems delivering such features.
 
-**Section 6**: Appendix I: example of onboarding of organisations in DOME - provides examples with detailed technical descriptions of some user journeys in DOME..
+[Section 6: Appendix I: example of onboarding of organisations in DOME](06_appendix_i.md) - provides examples with detailed technical descriptions of some user journeys in DOME..
 
-**Section 7**: Appendix II: JAdES signatures of Verifiable Credentials - provides a description of the approach to digital signatures of Verifiable Credentials in DOME, to achieve high legal certainty and alignment with the EU eIDAS (and upcoming eIDAS2) regulatory framework..
+[Section 7: Appendix II: JAdES signatures of Verifiable Credentials](07_appendix_ii.md) - provides a description of the approach to digital signatures of Verifiable Credentials in DOME, to achieve high legal certainty and alignment with the EU eIDAS (and upcoming eIDAS2) regulatory framework..
 
-**Section 8**: Appendix III: remote Digital Signature Service (rDSS) - provides a description of the approach to remote/cloud digital signatures, enabling the use of advanced and qualified signatures for Verifiable Credentials and other types of documents, increasing legal certainty and making Verifiable Credentials equivalent to handwritten signed documents.
+[Section 8: Appendix III: remote Digital Signature Service (rDSS)](08_appendix_iii.md) - provides a description of the approach to remote/cloud digital signatures, enabling the use of advanced and qualified signatures for Verifiable Credentials and other types of documents, increasing legal certainty and making Verifiable Credentials equivalent to handwritten signed documents.
 
 ## 1.4 Related documents and resources
 
