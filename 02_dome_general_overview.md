@@ -4,12 +4,6 @@ DOME is an **ecosystem of federated instances of marketplaces sharing a curated 
 
 The concept is described in the following figure.
 
-<figure>
-    <img src="assets/media/image150.png" />
-    <figcaption>Figure 2.1 - High-level overview of DOME architecture</figcaption>
-</figure>
-
-
 ![Figure 2.1 - High-level overview of DOME architecture](assets/media/image150.png)
 Figure 2.1 - High-level overview of DOME architecture
 
@@ -33,9 +27,8 @@ The following figure completes the previous one with the Trust Framework, which 
 
 - The Trusted Events component is used for registering and publishing the events and logs which are at the base of the replication of the Product Offerings. It is important to note that the actual data is stored outside of the Trusted Events component, and that this component includes essentially the evidence (metadata with hashes and signatures) which is required for the trusted implementation of the replication of data.
 
-| <img src="./assets/media/image35.png" style="width:6.26042in;height:3.40278in" /> |
-|----|
-| *Figure 2.2 - High-level overview of DOME architecture (2)* |
+[Figure 2.2 - High-level overview of DOME architecture (2)](assets/media/image35.png)
+Figure 2.2 - High-level overview of DOME architecture (2)
 
 The Trust Framework of DOME is implemented on top of a federation of blockchain networks which are operated independently of DOME. The blockchain networks used must comply with the EU values and regulation, and in the near future it may include the EBSI blockchain network (whenever it enters into production).
 
