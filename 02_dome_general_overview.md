@@ -4,9 +4,10 @@ DOME is an **ecosystem of federated instances of marketplaces sharing a curated 
 
 The concept is described in the following figure.
 
-| <img src="./assets/media/image150.png" style="width:6.25in;height:2.59722in" /> |
-|----|
-| *Figure 2.1 - High-level overview of DOME architecture* |
+<figure>
+    <img src="./assets/media/image150.png" />
+    <figcaption>Figure 2.1 - High-level overview of DOME architecture</figcaption>
+</figure>
 
 Each of the federated marketplaces in the DOME ecosystem will be operated by an independent entity, and all the instances share a common catalogue by using a decentralised replication mechanism to securely synchronise the marketplace data managed in each instance.
 

@@ -51,7 +51,7 @@ DOME partners involved in technical activities and any party willing to connect 
 
 This document is divided into 5 sections, plus 3 appendixes:
 
-[Section 1: Introduction](01_introduction_overview.md) - provides a summary of this document
+[Section 1: Introduction](#1-introduction) - provides a summary of this document
 
 [Section 2: DOME General Overview](02_dome_general_overview.md) - describes the overall structure of the project, including different roles of users, the overall technical approach and the user journeys.
 
