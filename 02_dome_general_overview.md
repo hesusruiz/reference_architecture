@@ -42,9 +42,9 @@ Six different roles can be played by organisations involved in the ecosystem cre
 
 The following subsections will introduce the mentioned roles. Governance and Supervision bodies will be described when tackling Objective \#10.
 
-<img src="./assets/media/image162.png" style="width:6.26772in;height:3.90278in" />
+![Figure 2.3 - High-level vision of DOME architecture, operating model and roles](assets/media/image162.png)
 
-<span id="_17dp8vu" class="anchor"></span>*Figure 2.3 - High-level vision of DOME architecture, operating model and roles*
+Figure 2.3 - High-level vision of DOME architecture, operating model and roles
 
 ### 2.1.1 Cloud and edge service providers 
 
