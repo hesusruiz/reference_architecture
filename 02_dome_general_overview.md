@@ -9,6 +9,7 @@ The concept is described in the following figure.
     <figcaption>Figure 2.1 - High-level overview of DOME architecture</figcaption>
 </figure>
 
+
 Each of the federated marketplaces in the DOME ecosystem will be operated by an independent entity, and all the instances share a common catalogue by using a decentralised replication mechanism to securely synchronise the marketplace data managed in each instance.
 
 One of the marketplace instances in the ecosystem is special, in the sense that it is operated by the DOME Operator, a legal entity in charge of the governance of the DOME ecosystem. Except for some governance features assumed by the DOME Operator, at the technical level all instances share some characteristics described below, and the system tries to reduce to the minimum the need for centralisation.
