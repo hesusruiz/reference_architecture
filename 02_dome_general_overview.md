@@ -5,34 +5,32 @@ DOME is an **ecosystem of federated instances of marketplaces sharing a curated 
 The concept is described in the following figure.
 
 ![Figure 2.1 - High-level overview of DOME architecture](assets/media/image150.png)
+<a id="figure-2-1">Figure 2.1 - High-level overview of DOME architecture</a>
 
-Figure 2.1 - High-level overview of DOME architecture
-
-Each of the federated marketplaces in the DOME ecosystem will be operated by an independent entity, and all the instances share a common catalogue by using a decentralised replication mechanism to securely synchronise the marketplace data managed in each instance.
+Each of the federated marketplaces in the DOME ecosystem is operated by an independent entity, and all the instances share a common catalogue by using a decentralised replication mechanism to securely synchronise the marketplace data managed in each instance.
 
 One of the marketplace instances in the ecosystem is special, in the sense that it is operated by the DOME Operator, a legal entity in charge of the governance of the DOME ecosystem. Except for some governance features assumed by the DOME Operator, at the technical level all instances share some characteristics described below, and the system tries to reduce to the minimum the need for centralisation.
 
-Thanks to the common open standards adopted by the DOME ecosystem for the Trust Framework and the use of eIDAS digital signatures and data models for the description of digital service offerings and its certifications, the participants in the ecosystem can replicate the catalogue information in a trusted and scalable way, without relying in any centralised catalogue instance.
+Thanks to the common open standards adopted by the DOME ecosystem for the Trust Framework and the use of eIDAS digital signatures and [TMForum Open API](https://www.tmforum.org/oda/open-apis/directory) data models for the description of digital service offerings and its certifications, the participants in the ecosystem can replicate the catalogue information in a trusted and scalable way, without relying in any centralised catalogue instance.
 
-The replication mechanism is based on a Decentralised Publish/Subscribe Bus, where participants can publish events for new or modified Product Offerings, and other participants can subscribe to those events (or a subset of them) to perform the synchronisation of the new data with its own instance, if needed.
+The replication mechanism is based on a [Byzantine Fault Tolerant](https://en.wikipedia.org/wiki/Byzantine_fault) (BFT) Publish/Subscribe Bus, where participants can publish events for new or modified Product Offerings, and other participants can subscribe to those events (or a subset of them) to perform the synchronisation of the new data with its own instance, if needed.
 
 Each marketplace instance can have its own users (both Providers and Customers of services) and manage the relationship with them directly, while at the same time leveraging the mechanisms provided by DOME (like for payments) to provide additional benefits to their users.
 
-The following figure completes the previous one with the Trust Framework, which is the base for all trusted properties of the system. DOME adopts the same APIs as the ones defined in EBSI, so all the applications and subsystems using the Trust Framework can work on top of any compatible implementation (including, of course, the EBSI blockchain network itself). The main components of the Trust Framework are:
+The following figure completes the previous one with the DOME Trust Framework, which together with the [EU Digital Identity Framework](https://eidas.ec.europa.eu/efda/home) is the base for the trusted properties of the system. DOME adopts the same APIs as the ones defined in [EUROPEUM-EDIC EBSI](https://ec.europa.eu/digital-building-blocks/sites/spaces/EBSI/pages/844759063/EUROPEUM-EDIC), so all the applications and subsystems using the Trust Framework can work on top of any compatible implementation (including, of course, the EBSI blockchain network itself). The main components of the Trust Framework are:
 
 - The Trusted Participants list is a decentralised list with the identities of the organisations in the DOME ecosystem. It is very important to note that only public information is stored there, and specifically no PII (Personally identifiable information) is managed.
 
-- The Trusted Issuers list contains the identities of the organisations that can issue Verifiable Credentials that are accepted by DOME. The list also has the types of Verifiable Credentials that those trusted organisations can issue. This list includes only the organisations that are not already included in some external Trust Framework, like the eIDAS or Gaia-X Trust Frameworks.
+- The Trusted Issuers list contains the identities of the organisations that can issue Verifiable Credentials (Electronic Attestations of Attributes in the terminology of eIDAS2) that are accepted by DOME. The list also has the types of Verifiable Credentials that those trusted organisations can issue. This list includes only the organisations that are not already included in some external Trust Framework, like the eIDAS or Gaia-X Trust Frameworks.
 
 - The Trusted Schemas list contains the list of schemas (data models) of Verifiable Credentials used in the DOME ecosystem (like the LEARCredential, which is used to enable employees of the participating organisations to login in the DOME Marketplace).
 
-- The Trusted Events component is used for registering and publishing the events and logs which are at the base of the replication of the Product Offerings. It is important to note that the actual data is stored outside of the Trusted Events component, and that this component includes essentially the evidence (metadata with hashes and signatures) which is required for the trusted implementation of the replication of data.
+- The Trusted Events component is used for registering and publishing the events and logs which are at the base of the replication of the Product Offerings. It is important to note that the actual data is stored outside of the Trusted Events component, and that this component includes essentially the evidence (metadata with hashes and signatures) which is required for the trusted verification of the replication of data.
 
 ![Figure 2.2 - High-level overview of DOME architecture (2)](assets/media/image35.png)
 <a id="figure-2-2">Figure 2.2 - High-level overview of DOME architecture (2)</a>
 
-
-The Trust Framework of DOME is implemented on top of a federation of blockchain networks which are operated independently of DOME. The blockchain networks used must comply with the EU values and regulation, and in the near future it may include the EBSI blockchain network (whenever it enters into production).
+The Trust Framework of DOME supports a federation of blockchain networks which are operated independently of DOME. The blockchain networks used must comply with the EU values and regulation, and in the near future it may include the EBSI blockchain network (whenever it enters into production).
 
 The following subsections elaborate on the roles that organisations can play with respect to DOME as well as some details of the technical architecture.
 
@@ -40,41 +38,38 @@ The following subsections elaborate on the roles that organisations can play wit
 
 Six different roles can be played by organisations involved in the ecosystem created around DOME as illustrated in Figure 2.3: **cloud and edge service providers**, **marketplace providers**, **customers**, **operators of the DOME technical infrastructure**, **third parties capable of integrating and offering their services complementing those implemented in the DOME technical infrastructure**, and **members of governance and supervisory bodies**.
 
-The following subsections will introduce the mentioned roles. Governance and Supervision bodies will be described when tackling Objective \#10.
+The following subsections will introduce the mentioned roles. Governance and Supervision bodies is described in a different document.
 
 ![Figure 2.3 - High-level vision of DOME architecture, operating model and roles](assets/media/image162.png)
-
-Figure 2.3 - High-level vision of DOME architecture, operating model and roles
+<a id="figure-2-3">Figure 2.3 - High-level vision of DOME architecture, operating model and roles</a>
 
 ### 2.1.1 Cloud and edge service providers 
 
 Cloud and edge service providers (IaaS, platform and app/data service providers) are organisations (public institutions or private companies) that offer service products that can be consumed by customers, such as other organisations or individuals. They access the DOME provider portal where they can register and manage the description of specifications and offerings linked to their products. Product Specifications and Product Offerings associated (see section 2.2.1 Basic Information Model) with a given service from a service provider are stored in the Shared Service Catalogue that is the central part of DOME. A Product comprises a number of Services and supporting Resources (e.g., an Air Quality monitoring product for a given City may consist of an application offered as a Service from the Cloud and a number of computing resources on the Cloud plus a number of IoT devices for monitoring air quality deployed in the field).
 
-The description of each Product Specification and Product Offering will be provided in a standard-based format prescribed in DOME. The description of a Product Specification will comprise information like the unique identifier of the product, its name, version, associated documentation, description of software services implementing the product functionality, description of resources required for execution of such software services (e.g., computing capacity, including disk storage, to be provisioned for serving each customer, or devices to be deployed on the edge), status within the lifecycle of the product (under testing, validated, active, obsolete, retired, …), etc. On the other hand, the description of a Product Offering will comprise an unique identifier, a reference to the specification of the product being offered, lifecycle status, terms and conditions associated to its use, pricing model, associated agreements (e.g., list of Service Level Agreements that users can choose from), target market segment, kind of marketplaces through which the product can be offered, etc. Both, Product Specifications and Product Offering descriptions, will comprise a number of labels issued by certification agencies in connection with the service offered that certifies compliance with defined EU regulations or rules established by supervision authorities (e.g., GDPR regulations, established regulations for specific sectors like health, energy, finance, regulations for cloud services to be established in the EU Cloud Rulebook, …), relevant standards (e.g., standards for interoperability) or best practices (e.g., Open Source Security Foundation Best Practices).
+The description of each Product Specification and Product Offering is profided in a de facto standard format prescribed in DOME. The description of a Product Specification comprises information like the unique identifier of the product, its name, version, associated documentation, description of software services implementing the product functionality, description of resources required for execution of such software services (e.g., computing capacity, including disk storage, to be provisioned for serving each customer, or devices to be deployed on the edge), status within the lifecycle of the product (under testing, validated, active, obsolete, retired, …), etc.
 
-Cloud and edge data/app service providers could receive **Product Orders** from end customers directly from the DOME order management system or from marketplaces federated in DOME which have incorporated the data/app services as part of their catalogue (see description of the role of Federated Marketplaces below). Similarly, providers may receive payments through third-party payment service providers that have integrated their services directly with DOME, but they can receive such payments also from the payment services implemented by the federated marketplaces through which service orders were issued.
+On the other hand, the description of a Product Offering will comprise an unique identifier, a reference to the specification of the product being offered, lifecycle status, terms and conditions associated to its use, pricing model, associated agreements (e.g., list of Service Level Agreements that users can choose from), target market segment, kind of marketplaces through which the product can be offered, etc.
 
-Through specific pages for providers of the DOME portal, cloud and edge IaaS, Platform and data/app service providers can also monitor the evolution of instances of their services for particular end users and generate different kinds of reports. In order to be able to access these specific pages for providers under the DOME portal, each cloud and edge IaaS, Platform and data/app service provider has to be registered in the eIDAS service (See objective \#2).
+The Product Offering descriptions include a number of labels issued by certification agencies (including official Conformity Assessment Bodies or CABs) in connection with the service offered that certifies compliance with defined EU regulations or rules established by supervision authorities (e.g., GDPR regulations, established regulations for specific sectors like health, energy, finance, regulations for cloud services to be established in the EU Cloud Rulebook, …), relevant standards (e.g., standards for interoperability) or best practices (e.g., Open Source Security Foundation Best Practices).
+
+Cloud and edge data/app service providers can receive Product Orders from end customers directly from the DOME order management system or from marketplaces federated in DOME which have incorporated the data/app services as part of their catalogue (see description of the role of Federated Marketplaces below). Similarly, providers may receive payments through third-party payment service providers that have integrated their services directly with DOME, but they can receive such payments also from the payment services implemented by the federated marketplaces through which service orders were issued.
+
+Through specific pages for providers of the DOME portal, cloud and edge IaaS, Platform and data/app service providers can also monitor the evolution of instances of their services for particular end users and generate different kinds of reports. In order to be able to access these specific pages for providers under the DOME portal, each cloud and edge IaaS, Platform and data/app service provider has to be registered in DOME Marketplace.
 
 ### 2.1.2 Federated Marketplaces
 
-As illustrated in figure 1, different kind of marketplaces can be federated to DOME:
+A Federated Marketplace is an entity that manages its own providers and customers, which uses the federation and replication mechanisms of DOME to provide a bidirectional replication of product offerings between the DOME ecosystem and its own catalogue.
 
-- **Marketplace connected to an IaaS provider**, which comprises a catalogue of cloud and edge data/app services which customers can pick and then easily deploy on top of the computing infrastructure supported by the given IaaS provider
+Note that a given cloud/edge service may be visible in multiple marketplaces. On the other hand, a given marketplace may only comprise a subset of the cloud and edge services listed in the DOME shared catalogue (e.g., the Marketplace connected to a concrete Smart City platform will only include data/app services relevant for cities). The Federated Marketplace operator has control of what product offerings are published outside of its own catalogue, and which "external" product offerings are published in its own catalogue.
 
-- **Marketplace connected to a Platform provider** which comprises a catalogue of cloud and edge data/app services which customers can pick and easily activate, and will run integrated with the rest of data/app services already running for the customer on top of the provided Platform.
-
-- **Independent Marketplace**, which comprises a catalogue of cloud and edge data/app services which are not tied to any particular IaaS or Platform provider
+The cloud and edge data/app services published in the DOME instance will always be visible to potential customers and could be procured through the DOME instance. However, federated marketplaces will typically bring a personalised user experience to their target customers, and also a different implementation of their own rating, billing and payment processes, even though they may rely on payment and billing services offered by the DOME instance.
 
 Examples of Marketplace connected to Platform providers would be marketplaces connected to specific application domains, like Smart Cities or a Smart Farming, or marketplaces connected to specific technology platforms, like a Spark-based platform for development of AI apps, or a Grafana-based platform for development of dashboard apps. In the case of a marketplace connected to a specific Smart City platform, the catalogue may comprise apps for Smart Parking, Smart Air Monitoring or Smart Waste Management, for example. Note that each data/app service may be hosted on a different IaaS cloud or servers and it does not need to be the same where the Platform is hosted. In the case of a Smart Farming Platform, the catalogue may comprise apps for Smart Field Watering, Smart Pesticide Spreading or Smart Silos Management. Similarly, a marketplace connected to a Spark-based platform may comprise applications for predictive maintenance of vehicles, or Weather predictions. Some of the data/app services can be provided by the Platform provider (e.g., Integrated Command and Control system in connection with Smart City Platforms, or Smart Farm Management Information System in connection with Smart Farming Platforms). Some of them may be already active by default for all customers, otherwise may require acquisition through the marketplace.
 
-Note that a given cloud/edge service may be visible in multiple marketplaces. On the other hand, a given marketplace may only comprise a subset of the cloud and edge services listed in the DOME shared catalogue (e.g., the Marketplace connected to a concrete Smart City platform will only include data/app services relevant for cities).
-
-Note that cloud and edge data/app services will always be visible and could be procured through DOME. However, federated marketplaces will typically bring a personalised user experience to their target customers, and also a different implementation of their own rating, billing and payment processes, even though they may rely on payment and billing services offered by third parties through DOME.
-
 ### 2.1.3 Customers
 
-European public and private customers looking for trusted cloud and edge services will interact with DOME following one of the two following paths:
+Customers looking for trusted cloud and edge services will interact with DOME following one of the two following paths:
 
 - In a very first step, accessing the DOME portal and leveraging service brokering functions of the DOME technical infrastructure to discover IaaS or platform providers which, together with their associated marketplaces can bring to them the best personalised experience. Afterwards, interacting directly through the marketplace associated with the IaaS and platform of their choice, picking the concrete cloud and edge data/app services offerings that are published through the marketplace catalogue which therefore can be seamlessly integrated with their selected IaaS/Platform to support processes of their organisation.
 
@@ -84,25 +79,21 @@ While the second path will be feasible, it is envisaged that the first path will
 
 ### 2.1.4 Operators of the DOME technical infrastructure
 
-During the execution of the project, a number of companies of the consortium will act as operators of the DOME technical infrastructure, ensuring the proper functioning of DOME, including security aspects. Along the duration of the project a revenue-based business model will be defined to ensure long-term sustainability of DOME evolution and operations. Such business model may imply creation of an independent company, institution or association by the operators (see description of Objective \#9).
+During the execution of the project, a number of companies of the consortium act as operators of the technical infractructure of DOME, ensuring the proper functioning of DOME, including security aspects. The DOME project has defined a revenue-based business model to ensure long-term sustainability of DOME and its evolution and operations. The business model is defined in a different document.
 
 ### 2.1.5 Third parties integrating and offering complementary services 
 
-DOME will provide means for integration of Third-party services, namely:
+DOME provides means for integration of Third-party services, namely:
 
-- Services from certification and audit agencies which will help to validate the reliability, security, and sovereignty of certain cloud services by checking/verifying their compliance with predetermined market-wide certifications (see more in description of Objective \#6).
+- Services from certification and audit agencies which help to validate the reliability, security, and sovereignty of certain cloud services by checking/verifying their compliance with predetermined market-wide certifications.
 
-- IAM service providers offering services aligned with open standards for IAM adopted in DOME (see more in description of Objective \#2), bringing participants the ability to securely manage identities and access to specific cloud and edge data/app services.
+- IAM service providers offering services aligned with open standards for IAM adopted in DOME, bringing participants the ability to securely manage identities and access to specific cloud and edge data/app services.
 
-- Billing and Payment service providers working as gateways that rely on transaction logs registered in the federated blockchain network infrastructure underlying DOME to provide secure, transparent and trustful billing to consumers and payment to providers.
-
-For all these three kinds of third-party services, the marketplace represents a new source of revenue, as it gives them access to a new market (the cloud and edge service providers and the customers). On the other hand, they represent potential sources of revenue for securing the sustainability of DOME.
-
-Integration of third party IAM providers will not be required for DOME to function since DOME will already provide an implementation of the IAM framework since its very first version, with open source components that the different parties (providers, consumers, marketplaces) may integrate in their runtime environments. However, integration with third party IAM service providers that implement the same standards will be supported. On the other hand, Billing and Payment Service providers will not be required for procuring data/app services through federated marketplaces since they will typically integrate their own billing and payment systems. Integration with third party Billing and Payment service providers will be useful when data/app service providers opt for activating procurement directly through DOME. For these reasons, the ability for third party IAM, Billing and Payment service providers to integrate their services with DOME will be incorporated as one of its functions.
+Integration of third party IAM providers is not required for DOME to function since DOME already provides an implementation of the IAM framework since its very first version, with open source components that the different parties (providers, consumers, marketplaces) may integrate in their runtime environments. However, integration with third party IAM service providers that implement the same standards is supported.
 
 ### 2.1.6 Members of governance and supervisory bodies
 
-Last but not least, DOME will define suitable governance and supervisory bodies that will oversee development of the ecosystem around DOME ensuring fulfilment of its objectives (see more details in connection to objective \#10). These bodies will incorporate not only initial consortium members and representatives of relevant stakeholders including the EC and representatives of member states but will be open to the addition of new members (e.g., providers of marketplaces federated with DOME after the projects starts).
+Last but not least, DOME will define suitable governance and supervisory bodies that will oversee development of the ecosystem around DOME ensuring fulfilment of its objectives. These bodies will incorporate not only initial consortium members and representatives of relevant stakeholders including the EC and representatives of member states but will be open to the addition of new members (e.g., providers of marketplaces federated with DOME after the projects starts).
 
 ## 2.2 Overall technical approach
 
